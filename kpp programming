@@ -1,0 +1,37 @@
+// NAMA        : Hernanda Achmad Priyatna
+// NRP        : 5022221114
+// Jurusan    : Teknik Elektro
+
+#include <iostream>
+#include <cmath>
+
+#define GRAVITASI 10 //10 m/s^2
+#define START_PENGUKURAN 1 //pengukuran dimulai dari 1 meter
+#define SUDUT 45 //sudut elevasi tembakan
+using namespace std;
+
+
+int main() {
+    int x=0;
+    float v=0;
+    scanf("%f", &v);
+    if (v<=10&&v>=1){
+        v-=1;
+    }else if(v<=20&&v>=11){
+        v-=3;
+    }else{
+        v-=5;
+    }
+    x=v*v*sin(2*SUDUT*3.14/180)/GRAVITASI;
+    printf("%d ", x);
+    v=sqrt(x*GRAVITASI)/sin(2*SUDUT*3.14/180);
+      if(v>=1&&v<=10){
+        v+=1;
+    }else if(v>=11&&v<20){
+        v+=3;
+    }else{
+        v+=5;
+    }
+    printf("%.4f", v);
+    return 0;
+}
